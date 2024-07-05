@@ -6,6 +6,8 @@ COPY olamundo.go .
 
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build olamundo.go
 
+RUN rm  olamundo.go
+
 FROM scratch
 
 COPY --from=golang /usr/src/app /

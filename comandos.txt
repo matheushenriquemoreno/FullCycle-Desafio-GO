@@ -1,16 +1,19 @@
+-- repositorios de images
 https://github.com/GoogleContainerTools/distroless
 
 gcr.io/distroless/static-debian12:latest-amd64
 
-
 -- iniciando
 docker pull golang
 
+-- criando um container para trabalhar com GO apontando para minha pasta
 docker run --rm -it -v ${PWD}/:/usr/src/app -p 3000:3000 node bash
 
-
--- criando a imagem pequena
+-- criando a imagem
 docker build -t matheushenrique35/go-low .
 
--- pod build da imagem
+-- publicando a imagem
+docker push matheushenrique35/go-low
+
+-- Criando container da imagem
 docker run matheushenrique35/go-low

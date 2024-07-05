@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  olamundo:
+    build:
+      context: .
+    image: matheushenrique35/go-low
+    container_name: go-low-container
+    tty: true
+    
